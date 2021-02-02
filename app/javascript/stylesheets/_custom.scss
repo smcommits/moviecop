@@ -1,0 +1,9 @@
+$font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+
+.form-section {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 450px;
+}

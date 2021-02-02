@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   skip_before_action :require_login!, only: [:new, :create]
 
   def new
@@ -19,6 +18,5 @@ class SessionsController < ApplicationController
     @_current_user = nil
     redirect_to login_path
   end
-
 
 end

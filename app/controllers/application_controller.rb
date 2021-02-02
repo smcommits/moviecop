@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  before_action :require_login!
   def logged_in?
     session[:current_user_id] != nil
   end
