@@ -11,7 +11,52 @@ class User < ApplicationRecord
   has_many :opinions
   has_many :opinion_followings, through: :followings, source: :opinions
 
+  has_many_attached :photo
+  has_many_attached :coverimage
 
+ def following_count
+    followings.count
+  end
+
+  def followers_count
+    followers.count
+  end
+
+  def self.authenticate(username: nil)
+    User.find_by_username(username)
+  end
+
+  def opinions_from_followings
+    opinion_followings.includes([:user]).order(created_at: :desc)
+  end
+
+  def following?(user)
+    followings.include?(user)
+  end
+
+  def not_following
+    User.all.includes([:photo_attachment]).excluding(followings, self).sort_by(&:created_at).reverse!
+  end
+
+  def opinions_count
+    opinions.count
+  end
+
+  def followings_count
+    followings.count
+  end
+
+  def followers_count
+    followers.count
+  end
+
+  def current_user?
+    self == current_user
+  end
+
+  def photo_attached?
+    photo.attached?
+  end
 
 
 end
