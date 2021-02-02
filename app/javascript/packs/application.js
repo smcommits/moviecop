@@ -13,3 +13,9 @@ require("bootstrap")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+window.onload = function(){
+document.getElementById("file-input").onchange = function() {
+    document.getElementById("photo-form").submit();
+}};
+

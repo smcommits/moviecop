@@ -6,7 +6,7 @@
       </label>
 
       <%=form_with url: user_path(id: current_user.id), id: 'photo-form', method: :patch do |f|%>
-         <%= f.file_field :coverimage, id:"file-input" %>
+         <%= f.file_field :photo, id:"file-input" %>
       <%end%> 
    </div>
 </div>

@@ -10,6 +10,19 @@ $font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', r
 
 .photo-change{
 
+  label{
+  width: 95px;
+  height: 95px;
+
+  img {
+    width: 99%;
+    height: 99%;
+    object-fit: cover;
+    border-radius: 49%;
+  }
+
+
+  }
 
   input {
     display: none;

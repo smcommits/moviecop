@@ -11,8 +11,8 @@ class User < ApplicationRecord
   has_many :opinions
   has_many :opinion_followings, through: :followings, source: :opinions
 
-  has_many_attached :photo
-  has_many_attached :coverimage
+  has_one_attached :photo
+  has_one_attached :coverimage
 
  def following_count
     followings.count

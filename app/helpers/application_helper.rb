@@ -15,6 +15,8 @@ module ApplicationHelper
         render partial: 'change',
           locals: {profile_photo: image_tag("https://bulma.io/images/placeholders/96x96.png") }
       end
+    else
+      image_tag("https://bulma.io/images/placeholders/96x96.png")
     end
   end
 

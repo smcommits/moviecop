@@ -18,13 +18,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]);
+    @user = User.find(params[:id])
   end
 
   def update
     if current_user.photo.attach(params[:photo])
       flash[:success] = 'Image Uploaded Successfully'
-      redirect_to root_path
+      redirect_to user_path(id: current_user.id)
     end
   end
 
