@@ -20,7 +20,7 @@ $font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', r
     width: 99%;
     height: 99%;
     object-fit: cover;
-    border-radius: 49%;
+    border-radius: 50%;
   }
 
 
@@ -45,4 +45,10 @@ $font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', r
 
 .opinions {
   width: 95%;
+}
+
+#profile {
+  label {
+    position: relative;
+  }
 }

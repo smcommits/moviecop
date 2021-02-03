@@ -1,0 +1,11 @@
+<div class="media mt-3">
+  <div class="op-photo">
+    <%= opinionionator_photo(opinion.user) %>
+  </div>
+  <div class="media-body ml-2 rounded">
+    <%= link_to user_path(opinion.user), class: "text-dark" do %>
+    <strong class="mt-0"><%=opinion.user_fullname%></strong>
+  <%end%>
+    <p class="text-secondary"><%=opinion.text%></p>
+  </div>
+</div>

@@ -1,3 +1,7 @@
+<%= render 'layouts/navbar'%>
+<%= render 'layouts/sidebar'%>
+
+
 <section class="coverimage-container">
   <%= display_cover_image(@user) %>
 </section>
@@ -5,7 +9,7 @@
 <section class="user-details">
 
   <div class="profile-name d-flex flex-column px-3 position-relative">
-    <div class="dp-container"><%= display_profile_photo(@user)%></div>
+    <div class="dp-container" id="user-photo"><%= display_profile_photo(@user)%></div>
     <div class="name py-4">
       <strong class="text-uppercase d-block mt-3"><%=@user.fullname%></strong>
       <small class="text-secondary"><%="@#{@user.username}"%></small>
@@ -37,7 +41,7 @@
 </section>
 
 <div class="profile-items mt-2">
-  <ul class="nav nav-tabs row">
+  <ul class="nav nav-tabs row mx-0">
     <li class="nav-item col-6 text-center">
       <a class="nav-link active font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#opinions">Opinions</a>
     </li>

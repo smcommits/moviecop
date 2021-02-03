@@ -1,0 +1,30 @@
+<%= render 'layouts/navbar'%>
+<%= render 'layouts/sidebar'%>
+
+<div>
+  <%= simple_form_for  @opinion, html: {class: 'shadow-sm rounded p-3 mt-2 overflow-auto'} do |f| %>
+  <div class="form-group">
+    <%= f.input :text, label: "So, what's your opinion? ", wrapper: false, placeholder: "Present a new Opinion", 
+      input_html: {class: 'form-control'}, label_html: {class: "opinion-label text-uppercase font-weight-bold text-secondary"} %>
+  </div>
+  <%=f.submit "Opinionate", class: 'btn btn-dark float-right' %>
+<%end%>
+</div>
+
+<div>
+
+  <section class="follwings-tweets shadow-sm rounded p-3 mt-4">
+    <strong class="text-uppercase text-primary"><%="#{@followings_opinions&.count} new opinions"%></strong>
+    <hr>
+    <%= render @followings_opinions%>
+  </section>
+</div>
+
+<div >
+  <section class="to-follow shadow-sm rouded p-3 p-4 mt-4">
+<strong class="mb-2 font-weight-bold text-secondary text-uppercase">Who To Follow</strong>
+  <hr>
+  <%= render @not_following %>
+  </section>
+</div>
+
