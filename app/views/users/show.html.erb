@@ -1,70 +1,69 @@
-<%= render 'layouts/navbar'%>
 <%= render 'layouts/sidebar'%>
 
 
-<section class="coverimage-container">
-  <%= display_cover_image(@user) %>
-</section>
+<div class="content h-100">
 
-<section class="user-details">
+  <%= render 'layouts/navbar'%>
 
-  <div class="profile-name d-flex flex-column px-3 position-relative">
-    <div class="dp-container" id="user-photo"><%= display_profile_photo(@user)%></div>
-    <div class="name py-4">
-      <strong class="text-uppercase d-block mt-3"><%=@user.fullname%></strong>
-      <small class="text-secondary"><%="@#{@user.username}"%></small>
-    </div>
-  </div>
-  
-  <div class="row border-top border-bottom mx-0">
-    <div class="col-4 border-right text-center d-flex flex-column p-4">
-      <strong class="text-center p4">
-        <%= @user.opinions_count %>
-      </strong>
-      <small class="font-weight-bold text-secondary">Opinions</small>
-    </div>
+  <section class="coverimage-container d-lg-none">
+    <%= display_cover_image(@user) %>
+  </section>
+
+  <section class="user-details d-lg-none">
+    <%= render partial: 'user_detail'%>
+  </section>
+
+  <div class="container-fluid row pr-0 h-100">
     
-    <div class="col-4 border-right text-center d-flex flex-column p-4">
-      <strong class="text-center">
-        <%= @user.followings_count %>
-      </strong>
-      <small class="font-weight-bold text-secondary">Following</small>
-    </div>
-    
-    <div class="col-4 border-right text-center d-flex flex-column p-4">
-      <strong class="text-center">
-        <%= @user.followers_count %>
-      </strong>
-      <small class="font-weight-bold text-secondary">Followers</small>
-    </div>
-  </div>
-</section>
-
-<div class="profile-items mt-2">
-  <ul class="nav nav-tabs row mx-0">
-    <li class="nav-item col-6 text-center">
-      <a class="nav-link active font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#opinions">Opinions</a>
-    </li>
-    <li class="nav-item col-6 text-center">
-    <a class="nav-link font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#followers">Followers</a>
-    </li>
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane fade show active" role="tabepanel" id="opinions">
-      <section class="opinions border mt-4 p-3 mx-auto">
-        <strong class="text-primary">All Opinions</strong>
-        <hr>
-        <%= display_opinions(@user) %>
+    <div class="col-lg-8">
+      
+      <section class="coverimage-container d-none d-lg-block">
+        <%= display_cover_image(@user) %>
       </section>
+
+      <div class="profile-items mt-2">
+        <ul class="nav nav-tabs row mx-0 d-lg-none">
+          <li class="nav-item col-6 text-center px-0">
+            <a class="nav-link active font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#opinions">Opinions</a>
+          </li>
+          <li class="nav-item col-6 text-center px-0">
+            <a class="nav-link font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#followers">Followers</a>
+          </li>
+        </ul>
+        
+        <div class="tab-content">
+          <div class="tab-pane fade show active" role="tabepanel" id="opinions">
+            <section class="opinions-user border mt-4 p-3 mx-auto bg-white mx-lg-0 rounded-lg">
+              <strong class="text-primary text-uppercase">All Opinions</strong>
+              <hr>
+              <%= display_opinions(@user) %>
+            </section>
+          </div>
+          
+          <div class="tab-pane fade" role="tabepanel" id="followers">
+            <section class="opinions border mt-4 p-3 mx-auto">
+              <strong class="text-primary">Followed By</strong>
+              <hr>
+              <%= display_followers(@user) %>
+            </section>
+          </div>
+
+        </div>
+
+      </div>
     </div>
-    
-    <div class="tab-pane fade" role="tabepanel" id="followers">
-      <section class="opinions border mt-4 p-3 mx-auto">
-        <strong class="text-primary">Followed By</strong>
+
+    <div class="col-lg-4 pr-0 h-100 pl-lg-2 who-to-follow-container d-none d-lg-block">
+      <section class="user-details-lg">
+        <%= render partial: 'user_detail'%>
+      </section>
+      
+      <section class="mt-4 p-3 mx-auto" id="followed">
+        <strong class="text-primary text-uppercase">Followed By</strong>
         <hr>
         <%= display_followers(@user) %>
       </section>
     </div>
+
   </div>
 </div>

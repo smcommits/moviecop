@@ -2,8 +2,16 @@ $font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', r
 
 $primary: #54a9ea;
 $dark: #1b2c3c;
-$secondary: #677d92;
+$secondary: #afb0b2;
+$secondary-semi: #677d92;
+$border-color: #e6e7e9;
+$nav-tabs-link-active-color: #fff;
+$nav-tabs-link-active-bg: $dark;
+$nav-tabs-link-active-border-color: $dark;
 
+.text-semi{
+  color: $secondary-semi
+}
 .form-section {
   top: 50%;
   left: 50%;
@@ -56,3 +64,5 @@ $secondary: #677d92;
     position: relative;
   }
 }
+
+

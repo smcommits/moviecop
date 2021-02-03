@@ -1,3 +1,10 @@
+body {
+  height: 100vh;
+}
+
+.bg-white {
+  background: #fff;
+}
 .side-menu {
   position: absolute;
   top: 50px; /* Height of navbar */
@@ -20,12 +27,30 @@
 @media (min-width: 992px) { 
 
   .side-menu {
-    position: sticky;
+    position: fixed;
+    width: 300px;
     left: 0;
     top: 0;
     visibility: visible;
-    top: 0;
     bottom: 0;
-    overflow-y: scroll;
-}
+    overflow: hidden;
+  }
+
+  .content{
+    margin-left: 300px;
+  }
+
+  .who-to-follow-container {
+    border-left: 1px solid #dcdddf;
+  }
+
+  .coverimage-container{
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .opinions-user {
+    width: 100%;
+  }
+
 }

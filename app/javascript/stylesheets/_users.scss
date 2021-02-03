@@ -10,3 +10,21 @@
   }
 
 }
+
+@media (min-width: 992px) { 
+  .user-details-lg {
+    text-align: center;
+    .photo-change {
+      label{
+        position: relative;
+        top: 0;
+      }
+    }
+
+    .name {
+      line-height: 1;
+    }
+  }
+
+}
+

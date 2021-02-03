@@ -8,51 +8,51 @@
         </div>
       </figure>
       <div class="col-8">
-        <strong class="text-secondary"><%= current_user&.fullname %></strong>
+        <strong class="text-semi"><%= current_user&.fullname %></strong>
       </div>
     </section>
 
   <section class="follow-info row">
     <div class="following col-6 text-center pt-3 pb-3">
-      <strong class="text-secondary d-block">
+      <strong class="text-semi d-block">
         <%=current_user&.following_count%>
       </strong>
-      <small class="text-secondary">Following</small>
+      <small class="text-semi">Following</small>
     </div>
 
     <div class="followers col-6 text-center pt-3 pb-3">
-      <strong class="text-secondary d-block">
+      <strong class="text-semi d-block">
         <%=current_user&.followers_count%>
       </strong>
-      <small class="text-secondary">Followers</small>
+      <small class="text-semi">Followers</small>
     </div>
   </section>
 
   <section>
     <ul class="nav side-nav flex-column text-center font-weight-bold text-uppercase">
-      <li class="pt-4 pb-3 text-secondary">
+      <li class="pt-4 pb-3 text-semi">
         <i class="fas fa-home mr-3"></i>
-        <%= link_to "Home", root_path , class: 'text-secondary'%>
+        <%= link_to "Home", root_path , class: 'text-semi'%>
       </li>
       
-      <li class="pt-4 pb-3 text-secondary">
+      <li class="pt-4 pb-3 text-semi">
         <i class="fas fa-at mr-3"></i>
-        <%= link_to "Connent", "#" , class: 'text-secondary'%>
+        <%= link_to "Connent", "#" , class: 'text-semi'%>
       </li>
       
-      <li class="pt-4 pb-3 text-secondary">
+      <li class="pt-4 pb-3 text-semi">
         <i class="fas fa-hashtag mr-3"></i>
-        <%= link_to "Discover", "#" , class: 'text-secondary'%>
+        <%= link_to "Discover", "#" , class: 'text-semi'%>
       </li>
       
-      <li class="pt-4 pb-3 text-secondary">
+      <li class="pt-4 pb-3 text-semi">
         <i class="fas fa-user-alt mr-3"></i>
-        <%= link_to "Profile", user_path(current_user) , class: 'text-secondary'%>
+        <%= link_to "Profile", user_path(current_user) , class: 'text-semi'%>
       </li> 
 
-      <li class="pt-4 pb-3 text-secondary">
+      <li class="pt-4 pb-3 text-semi">
         <i class="fas fa-sign-out-alt mr-3"></i> 
-        <%= link_to 'Logo Out', logout_path, method: :delete, class: 'text-secondary'%>
+        <%= link_to 'Logo Out', logout_path, method: :delete, class: 'text-semi'%>
       </li>
     </ul>
   </section>

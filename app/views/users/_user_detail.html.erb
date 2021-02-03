@@ -1,0 +1,33 @@
+
+    <div class="profile-name d-flex flex-column px-3 position-relative p-lg-2">
+      <div class="dp-container" id="user-photo"><%= display_profile_photo(@user)%></div>
+      <div class="name py-4 py-lg-0">
+        <strong class="text-uppercase d-block mt-3 mt-lg-0"><%=@user.fullname%></strong>
+        <small class="text-secondary"><%="@#{@user.username}"%></small>
+      </div>
+    </div>
+    
+    <div class="row border-top border-bottom mx-0">
+      <div class="col-4 border-right text-center d-flex flex-column px-0 py-2">
+        <strong class="text-center p4">
+          <%= @user.opinions_count %>
+        </strong>
+        <small class="font-weight-bold text-secondary">Opinions</small>
+      </div>
+      
+      <div class="col-4 border-right text-center d-flex flex-column px-0 py-2">
+        <strong class="text-center">
+          <%= @user.followings_count %>
+        </strong>
+        <small class="font-weight-bold text-secondary">Following</small>
+      </div>
+      
+      <div class="col-4 border-right text-center d-flex flex-column px-0 py-2">
+        <strong class="text-center">
+          <%= @user.followers_count %>
+        </strong>
+        <small class="font-weight-bold text-secondary">Followers</small>
+      </div>
+    </div>
+
+
