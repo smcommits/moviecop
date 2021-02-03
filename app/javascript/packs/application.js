@@ -14,17 +14,28 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-window.onload = function(){
-document.getElementById("file-input").onchange = function() {
-    document.getElementById("photo-form").submit();
-}};
+// window.onload = function(){
+// document.getElementById("file-input").onchange = function() {
+    // document.getElementById("photo-form").submit();
+// }};
 
-// window.onload = function() {
-  // document.querySelector('[data-bs-toggle="side-menu"]').addEventListener('click', function () {
-    // document.querySelector('.side-menu').classList.toggle('open');
-  // })
-// }
+// window.onload = function(){
+// document.getElementById("cover-input").onchange = function() {
+    // document.getElementById("cover-form").submit();
+// }};
+
+
 document.addEventListener('turbolinks:load', () =>{
+
+    document.getElementById("file-input").onchange = function() {
+    document.getElementById("photo-form").submit();
+    };
+
+    document.getElementById("cover-input").onchange = function() {
+    document.getElementById("cover-form").submit();
+    };
+
+
     document.querySelector('[data-bs-toggle="side-menu"]').addEventListener('click', function () {
         document.querySelector('.side-menu').classList.toggle('open')
     })

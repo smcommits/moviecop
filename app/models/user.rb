@@ -58,5 +58,10 @@ class User < ApplicationRecord
     photo.attached?
   end
 
+  def follow_instance(user)
+    follow = users_they_followed.where('followed_id = ?', user.id)
+    follow.take
+  end
+
 
 end

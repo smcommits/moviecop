@@ -6,7 +6,7 @@ body {
   background: #fff;
 }
 .side-menu {
-  position: absolute;
+  position: fixed;
   top: 50px; /* Height of navbar */
   bottom: 0;
   left: -100%;
@@ -34,6 +34,10 @@ body {
     visibility: visible;
     bottom: 0;
     overflow: hidden;
+
+    a:active{
+      background: #fff;
+    }
   }
 
   .content{
@@ -52,5 +56,7 @@ body {
   .opinions-user {
     width: 100%;
   }
+
+
 
 }

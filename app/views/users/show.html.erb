@@ -15,7 +15,7 @@
 
   <div class="container-fluid row pr-0 h-100">
     
-    <div class="col-lg-8">
+    <div class="col-lg-8 col-xl-9">
       
       <section class="coverimage-container d-none d-lg-block">
         <%= display_cover_image(@user) %>
@@ -33,7 +33,7 @@
         
         <div class="tab-content">
           <div class="tab-pane fade show active" role="tabepanel" id="opinions">
-            <section class="opinions-user border mt-4 p-3 mx-auto bg-white mx-lg-0 rounded-lg">
+            <section class="opinions-user shadow mt-4 p-3 mx-auto bg-white mx-lg-0 rounded-lg">
               <strong class="text-primary text-uppercase">All Opinions</strong>
               <hr>
               <%= display_opinions(@user) %>
@@ -41,8 +41,8 @@
           </div>
           
           <div class="tab-pane fade" role="tabepanel" id="followers">
-            <section class="opinions border mt-4 p-3 mx-auto">
-              <strong class="text-primary">Followed By</strong>
+            <section class="opinions mt-4 p-3 mx-auto shadow">
+              <strong class="text-primary text-uppercase">Followed By</strong>
               <hr>
               <%= display_followers(@user) %>
             </section>
@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <div class="col-lg-4 pr-0 h-100 pl-lg-2 who-to-follow-container d-none d-lg-block">
+    <div class="col-lg-4 col-xl-3 pr-0 h-100 pl-lg-2 who-to-follow-container d-none d-lg-block">
       <section class="user-details-lg">
         <%= render partial: 'user_detail'%>
       </section>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resource :opinions
   resource :sessions, only: [:new, :create, :destroy]
+  resource :followings, only: [:create, :destroy]
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

@@ -1,14 +1,14 @@
 <div class="bg-dark side-menu" id="navigator">
 
-  <div class="p-4"> 
-    <section class="row align-items-center profile-name pb-4">
-      <figure class="col-4 m-0">
+  <div class="p-4 px-lg-0"> 
+    <section class="profile-name d-flex align-items-center justify-content-center justify-content-lg-start">
+      <figure class="m-0">
         <div class="profile-picture mx-auto" id="profile">
             <%= current_user_photo %>
         </div>
       </figure>
-      <div class="col-8">
-        <strong class="text-semi"><%= current_user&.fullname %></strong>
+      <div>
+        <strong class="text-semi ml-4"><%= current_user&.fullname %></strong>
       </div>
     </section>
 

@@ -1,10 +1,11 @@
 
     <div class="profile-name d-flex flex-column px-3 position-relative p-lg-2">
-      <div class="dp-container" id="user-photo"><%= display_profile_photo(@user)%></div>
-      <div class="name py-4 py-lg-0">
+      <div class="dp-container d-lg-flex justify-content-center" id="user-photo"><%= display_profile_photo(@user)%></div>
+      <div class="name pt-5 mb-2 py-lg-0">
         <strong class="text-uppercase d-block mt-3 mt-lg-0"><%=@user.fullname%></strong>
         <small class="text-secondary"><%="@#{@user.username}"%></small>
       </div>
+      <div class='text-lg-center'><%= display_follow_button(@user)%></div>
     </div>
     
     <div class="row border-top border-bottom mx-0">

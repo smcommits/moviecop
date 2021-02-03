@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
     if params.key?(:photo)
       if current_user.photo.attach(params[:photo])
-      flash[:success] = 'Image Uploaded Successfully'
+      flash[:success] = params
       redirect_to user_path(id: current_user.id)
       end
     else

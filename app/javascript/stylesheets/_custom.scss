@@ -8,6 +8,7 @@ $border-color: #e6e7e9;
 $nav-tabs-link-active-color: #fff;
 $nav-tabs-link-active-bg: $dark;
 $nav-tabs-link-active-border-color: $dark;
+$box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 
 .text-semi{
   color: $secondary-semi
@@ -27,6 +28,7 @@ $nav-tabs-link-active-border-color: $dark;
   height: 95px;
   position: absolute;
   top: -50%;
+  cursor: pointer;
 
   img {
     width: 99%;
@@ -49,6 +51,7 @@ $nav-tabs-link-active-border-color: $dark;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  cursor: pointer;
 }
 
 .cover-input {
@@ -65,4 +68,24 @@ $nav-tabs-link-active-border-color: $dark;
   }
 }
 
+.user-dp {
+  width: 96px;
+  height: 96px;
+  
+  img {
+    width: 99%;
+    height: 99%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.user-profile-picture {
+
+  @extend .user-dp;
+  position: absolute;
+  top: -25%;
+
+
+}
 
