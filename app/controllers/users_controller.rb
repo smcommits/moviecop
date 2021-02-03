@@ -22,16 +22,23 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.photo.attach(params[:photo])
+    if params.key?(:photo)
+      if current_user.photo.attach(params[:photo])
       flash[:success] = 'Image Uploaded Successfully'
       redirect_to user_path(id: current_user.id)
+      end
+    else
+      if current_user.coverimage.attach(params[:coverimage])
+        flash[:success] = "Cover Image Changed Successfully"
+        redirect_to user_path(id: current_user.id)
+      end
     end
   end
 
   private
   
   def user_params
-    params.require(:user).permit(:username, :fullname, :photo)
+    params.require(:user).permit(:username, :fullname, :photo, :coverimage)
   end
 
  

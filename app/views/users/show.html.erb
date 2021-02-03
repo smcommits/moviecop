@@ -1,17 +1,18 @@
 <section class="coverimage-container">
+  <%= display_cover_image(@user) %>
 </section>
 
 <section class="user-details">
 
-  <div class="profile-name d-flex flex-column px-3">
+  <div class="profile-name d-flex flex-column px-3 position-relative">
     <div class="dp-container"><%= display_profile_photo(@user)%></div>
-    <div class="name pb-4">
+    <div class="name py-4">
       <strong class="text-uppercase d-block mt-3"><%=@user.fullname%></strong>
       <small class="text-secondary"><%="@#{@user.username}"%></small>
     </div>
   </div>
   
-  <div class="row border-top border-bottom">
+  <div class="row border-top border-bottom mx-0">
     <div class="col-4 border-right text-center d-flex flex-column p-4">
       <strong class="text-center p4">
         <%= @user.opinions_count %>
@@ -35,4 +36,31 @@
   </div>
 </section>
 
+<div class="profile-items mt-2">
+  <ul class="nav nav-tabs row">
+    <li class="nav-item col-6 text-center">
+      <a class="nav-link active font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#opinions">Opinions</a>
+    </li>
+    <li class="nav-item col-6 text-center">
+    <a class="nav-link font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#followers">Followers</a>
+    </li>
+  </ul>
 
+  <div class="tab-content">
+    <div class="tab-pane fade show active" role="tabepanel" id="opinions">
+      <section class="opinions border mt-4 p-3 mx-auto">
+        <strong class="text-primary">All Opinions</strong>
+        <hr>
+        <%= display_opinions(@user) %>
+      </section>
+    </div>
+    
+    <div class="tab-pane fade" role="tabepanel" id="followers">
+      <section class="opinions border mt-4 p-3 mx-auto">
+        <strong class="text-primary">Followed By</strong>
+        <hr>
+        <%= display_followers(@user) %>
+      </section>
+    </div>
+  </div>
+</div>

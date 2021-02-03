@@ -13,6 +13,8 @@ $font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', r
   label{
   width: 95px;
   height: 95px;
+  position: absolute;
+  top: -50%;
 
   img {
     width: 99%;
@@ -29,4 +31,18 @@ $font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', r
   }
 }
 
+.image-upload-cover{
+  padding: 20%;
+  width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
 
+.cover-input {
+    display: none;
+}
+
+.opinions {
+  width: 95%;
+}

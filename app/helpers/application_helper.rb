@@ -20,4 +20,16 @@ module ApplicationHelper
     end
   end
 
+  def display_cover_image(user) 
+    if user == current_user
+      if user.coverimage.attached?
+        render partial: 'coverimage',
+          locals: {url: url_for(user.coverimage)}
+      else
+        render partial: 'coverimage',
+          locals: {url: '/assets/cover_place.png'}
+      end
+    end
+  end
+
 end

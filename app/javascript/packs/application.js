@@ -19,3 +19,4 @@ document.getElementById("file-input").onchange = function() {
     document.getElementById("photo-form").submit();
 }};
 
+
