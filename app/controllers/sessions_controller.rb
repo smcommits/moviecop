@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     if user = User.find_by_username(params[:username])
       session[:current_user_id] = user.id
-      redirect_to user_path(id: user.id)
+      redirect_to root_path
     else
       flash[:alert] = 'Username Not Found!'
       render :new
