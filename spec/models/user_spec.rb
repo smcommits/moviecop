@@ -63,7 +63,39 @@ RSpec.describe User, type: :model do
       end
     end
 
- 
+    describe "#following?" do
+      it "should return true if a user is following other user" do
+        user2.users_they_followed.create(followed_id: user.id)
+        expect(user2.following?(user)).to eql(true)
+      end
+
+      it "should return false if a user is not following the other user" do
+        expect(user.following?(user2)).to eql(false)
+      end
+    end
+
+     describe "#opinions_count" do
+      it "should return the opinions count form user" do
+        user.opinions.create(text: "text")
+        expect(user.opinions_count).to eql(1)
+      end
+     end
+
+     describe "#followings_count" do
+       it "should the counts of users that a given user is following" do
+         user.users_they_followed.create(followed_id: user2.id)
+         expect(user.following_count).to eql(1)
+       end
+     end
+
+     describe "#followers_count" do
+       it "should return the count of user's followers" do
+         user.users_they_followed.create(followed_id: user2.id)
+         expect(user2.followers_count).to eql(1)
+       end
+     end
+
+
   end
 end
 
