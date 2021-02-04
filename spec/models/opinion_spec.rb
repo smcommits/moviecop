@@ -20,6 +20,4 @@ RSpec.describe Opinion, type: :model do
       end
     end
   end
-
-
 end
