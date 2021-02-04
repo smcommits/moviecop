@@ -36,5 +36,34 @@ RSpec.describe User, type: :model do
       end
     end
 
+    describe "#followers_count" do
+
+      it "should return all the followers of a user" do
+        user2.users_they_followed.create(followed_id: user.id)
+        count = user.followers_count
+        expect(count).to eql(1)
+      end
+    end
+
+    describe "#opinions_from_followings" do
+      
+      it "should return all the opinions from users that a user is following" do
+        user.opinions.create(text: "Test Opinion")
+        user2.users_they_followed.create(followed_id: user.id)
+        opinions = user2.opinions_from_followings
+        expect(opinions.first).to eql(user.opinions.first)
+      end
+
+      it "should return opinions in DESC order" do
+        first_op = user.opinions.create(text: "Test Opinion")
+        second_op = user.opinions.create(text: "Test Opinion 2")
+        user2.users_they_followed.create(followed_id: user.id)
+        opinions = user2.opinions_from_followings
+        expect(opinions.first).to eql(user.opinions.second)
+      end
+    end
+
+ 
+  end
 end
 
