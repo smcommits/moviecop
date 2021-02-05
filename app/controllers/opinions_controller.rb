@@ -4,9 +4,9 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user&.opinions&.new(opinion_params)
     return unless @opinion&.save
-      flash[:success] = 'Opinion Submitted!'
-      redirect_to user_path(current_user)
-    end
+
+    flash[:success] = 'Opinion Submitted!'
+    redirect_to user_path(current_user)
   end
 
   def like
