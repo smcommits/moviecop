@@ -8,14 +8,14 @@
     object-fit: cover;
     border-radius: 10px;
   }
-
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   .user-details-lg {
     text-align: center;
+
     .photo-change {
-      label{
+      label {
         position: relative;
         top: 0;
       }
@@ -29,7 +29,4 @@
   #unchanged {
     position: relative;
   }
-
-
 }
-
