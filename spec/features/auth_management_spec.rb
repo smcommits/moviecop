@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Befor Action', type: :feature do
@@ -15,5 +17,3 @@ RSpec.feature 'Befor Action', type: :feature do
     expect(page).to have_current_path(root_path)
   end
 end
-
-

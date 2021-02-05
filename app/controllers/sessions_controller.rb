@@ -1,8 +1,10 @@
-class SessionsController < ApplicationController
-  skip_before_action :require_login!, only: [:new, :create]
+# frozen_string_literal: true
 
-  def new
-  end
+class SessionsController < ApplicationController
+  skip_before_action :require_login!, only: %i[new create]
+
+  def new; end
+
   def create
     if user = User.find_by_username(params[:username])
       session[:current_user_id] = user.id
@@ -18,5 +20,4 @@ class SessionsController < ApplicationController
     @_current_user = nil
     redirect_to login_path
   end
-
 end

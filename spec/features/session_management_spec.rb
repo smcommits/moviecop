@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Login', type: :feature do
-
   let(:user) { User.create(username: 'Mike', fullname: 'Mike Tyson') }
-  scenario "Login user and redirect to welcome index page" do
+  scenario 'Login user and redirect to welcome index page' do
     visit '/login'
 
     fill_in 'Username', with: user.username
@@ -22,5 +23,3 @@ RSpec.feature 'Login', type: :feature do
     expect(page).to have_content('Username Not Found!')
   end
 end
-
-

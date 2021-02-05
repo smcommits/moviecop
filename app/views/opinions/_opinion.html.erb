@@ -6,6 +6,9 @@
     <%= link_to user_path(opinion.user), class: "text-dark" do %>
     <strong class="mt-0"><%=opinion.user_fullname%></strong>
   <%end%>
-    <p class="text-secondary"><%=opinion.text%></p>
+  <p class="text-secondary"><%=opinion.text%></p>
+
+  <%= render 'opinions/likes', opinion: opinion %>
   </div>
+  <%= display_like_button(opinion)%>
 </div>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action :require_login!
   def logged_in?
@@ -11,11 +13,8 @@ class ApplicationController < ActionController::Base
     redirect_to login_path
   end
 
-
   def current_user
     @_current_user ||= session[:current_user_id] &&
-      User.find_by(id: session[:current_user_id])
-  end  
- 
-
+                       User.find_by(id: session[:current_user_id])
+  end
 end

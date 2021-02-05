@@ -2,6 +2,7 @@ $font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', r
 
 $primary: #54a9ea;
 $dark: #1b2c3c;
+$danger: #e36363;
 $secondary: #afb0b2;
 $secondary-semi: #677d92;
 $border-color: #e6e7e9;
@@ -89,3 +90,14 @@ $box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 
 }
 
+
+.like {
+  font-size: 1.2em;
+  color: $danger;
+
+}
+
+
+.user-name {
+  font-weight: 700;
+}

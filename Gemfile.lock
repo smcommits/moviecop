@@ -60,6 +60,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    acts_as_votable (0.13.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bindex (0.8.1)
@@ -119,6 +120,11 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
+    octicons (12.0.0)
+      nokogiri (>= 1.6.3.1)
+    octicons_helper (12.0.0)
+      octicons (= 12.0.0)
+      rails
     pg (1.2.3)
     public_suffix (4.0.6)
     puma (5.2.0)
@@ -246,6 +252,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  acts_as_votable
   bootsnap (>= 1.4.4)
   bullet
   byebug
@@ -255,6 +262,7 @@ DEPENDENCIES
   irb (~> 1.2.7)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  octicons_helper
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
