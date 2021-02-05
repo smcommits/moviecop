@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 class Opinion < ApplicationRecord
   acts_as_votable
 
-  validates :text, presence: true
-  
+  validates :text, presence: { message: "Woops! Empty opinion won't make a differnce" }
+
   has_many :likes, dependent: :destroy
   belongs_to :user
 

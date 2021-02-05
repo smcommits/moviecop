@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
-  
-  acts_as_voter 
+  acts_as_voter
 
   validates :username, presence: true, uniqueness: true
   validates :fullname, presence: true
@@ -21,7 +18,7 @@ class User < ApplicationRecord
 
   def following_count
     followings.count
-   end
+  end
 
   def followers_count
     followers.count
@@ -43,20 +40,12 @@ class User < ApplicationRecord
     User.all.includes([:photo_attachment]).excluding(followings, self).sort_by(&:created_at).reverse!
   end
 
-  def opinions_count
-    opinions.count
-  end
-
   def followings_count
     followings.count
   end
 
-  def followers_count
-    followers.count
-  end
-
-  def current_user?
-    self == current_user
+  def opinions_count
+    opinions.count
   end
 
   def photo_attached?

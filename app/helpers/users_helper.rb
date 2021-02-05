@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module UsersHelper
   def display_opinions(user)
     if user.opinions.empty?
@@ -13,7 +11,7 @@ module UsersHelper
     if user.followers.empty?
       content_tag(:p, 'User has no followers', class: 'text-secondary font-weight-bold text-center')
     else
-      render partial: 'layouts/follows', collection: user.followers, as: :user
+      render partial: 'layouts/follows', collection: user.followers.includes([photo_attachment: :blob]), as: :user
     end
   end
 
@@ -21,9 +19,11 @@ module UsersHelper
     return if user == current_user
 
     unless current_user.following?(user)
-      return link_to 'Follow', followings_path(id: user.id), method: :post, class: 'following-button btn btn-dark w-50 mb-3', id: 'follow-button'
+      return link_to 'Follow', followings_path(id: user.id), method: :post,
+                                                             class: 'following-button btn btn-dark w-50 mb-3',
+                                                             id: 'follow-button'
     end
 
-    link_to 'Unfollow', followings_path(id: user.id), method: :delete, class: 'unfollow-button btn btn-dark w-50 mb-3'
+    link_to 'Unfollow', following_path(id: user.id), method: :delete, class: 'unfollow-button btn btn-dark w-50 mb-3'
   end
 end

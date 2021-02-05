@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module OpinionsHelper
   def opinionionator_photo(user)
     if user.photo_attached?
@@ -16,45 +14,44 @@ module OpinionsHelper
   def likes(opinion)
     votes = opinion.votes_for.by_type(User)
     return likers_collection(votes) if votes.size <= 4
+
     likers_count(votes)
   end
- 
-  def opinion_liked_check(opinion) 
+
+  def opinion_liked_check(opinion)
     if current_user.voted_for?(opinion)
       link_to unlike_opinion_path(opinion.id), remote: true do
-        content_tag(:i, '', class:"fas fa-heart like", id: "like_#{opinion.id}")
+        content_tag(:i, '', class: 'fas fa-heart like', id: "like_#{opinion.id}")
       end
     else
-      link_to like_opinion_path(opinion.id), remote: true  do
-        content_tag(:i, '', class:"far fa-heart like", id: "like_#{opinion.id}")
+      link_to like_opinion_path(opinion.id), remote: true do
+        content_tag(:i, '', class: 'far fa-heart like', id: "like_#{opinion.id}")
       end
     end
   end
 
-  private 
+  private
 
   def like_plural(votes)
-      return' like this' if votes.count > 1
-      ' likes this'
+    return ' like this' if votes.count > 1
+
+    ' likes this'
   end
 
-
-  def likers_collection(votes) 
+  def likers_collection(votes)
     user_names = []
-    unless votes.blank?
-      votes.voters.each do |voter|
-        user_names.push(link_to voter.username,
-                        user_path(voter),
-                        class:'user-name text-secondary') 
-      end
+    return if votes.blank?
 
-      user_names.to_sentence.html_safe + like_plural(votes)
+    votes.voters.each do |voter|
+      user_names.push(link_to(voter.username,
+                              user_path(voter),
+                              class: 'user-name text-secondary'))
     end
+    user_names.to_sentence.html_safe.concat(like_plural(votes))
   end
 
   def likers_count(votes)
     vote_count = votes.size
-    vote_count.to_s + ' likes'
+    "#{vote_count} likes"
   end
-
 end

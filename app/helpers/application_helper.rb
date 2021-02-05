@@ -1,9 +1,7 @@
-# frozen_string_literal: true
-
 module ApplicationHelper
   def current_user
-    @_current_user ||= session[:current_user_id] &&
-                       User.find_by(id: session[:current_user_id])
+    @current_user ||= session[:current_user_id] &&
+                      User.find_by(id: session[:current_user_id])
   end
 
   def display_profile_photo(user)

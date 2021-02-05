@@ -1,11 +1,9 @@
-# frozen_string_literal: true
-
 class OpinionsController < ApplicationController
   def new; end
 
   def create
     @opinion = current_user&.opinions&.new(opinion_params)
-    if @opinion&.save
+    return unless @opinion&.save
       flash[:success] = 'Opinion Submitted!'
       redirect_to user_path(current_user)
     end
@@ -13,23 +11,21 @@ class OpinionsController < ApplicationController
 
   def like
     @opinion = Opinion.find(params[:id])
-    if @opinion.liked_by current_user
-      respond_to do |format|
-        format.html { redirect_to :back }
-        format.js
-      end
+    return unless @opinion.liked_by current_user
+
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
     end
   end
 
   def unlike
     @opinion = Opinion.find(params[:id])
-    if @opinion.unliked_by current_user
+    return unless @opinion.unliked_by current_user
 
-      respond_to do |format|
-        format.html { redirect_to :back }
-        format.js
-      end
-
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
     end
   end
 

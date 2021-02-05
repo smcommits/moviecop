@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class FollowingsController < ApplicationController
   def create
     user = User.find(params[:id])

@@ -1,17 +1,10 @@
-<%= render 'layouts/sidebar'%>
-
+<%= render 'layouts/sidebar'%> 
 <div class="content h-100">
   <%= render 'layouts/navbar'%>
   <div class="container-fluid row pr-0 h-100">
   <div class="col-lg-8">
     <div class="bg-white">
-      <%= simple_form_for  @opinion, html: {class: 'shadow rounded p-3 mt-5 overflow-auto'} do |f| %>
-      <div class="form-group">
-        <%= f.input :text, label: "So, what's your opinion? ", wrapper: false, placeholder: "Present a new Opinion", 
-          input_html: {class: 'form-control'}, label_html: {class: "opinion-label text-uppercase font-weight-bold text-secondary"} %>
-      </div>
-      <%=f.submit "Opinionate", class: 'btn btn-dark float-right' %>
-    <%end%>
+      <%= render partial: 'opinions/form', locals: {opinion: @opinion}%>
     </div>
 
     <div>

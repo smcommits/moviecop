@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   skip_before_action :require_login!, only: %i[new create]
 
@@ -18,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes([:photo_attachment]).find(params[:id])
   end
 
   def update
@@ -27,11 +25,9 @@ class UsersController < ApplicationController
         flash[:success] = params
         redirect_to user_path(id: current_user.id)
       end
-    else
-      if current_user.coverimage.attach(params[:coverimage])
-        flash[:success] = 'Cover Image Changed Successfully'
-        redirect_to user_path(id: current_user.id)
-      end
+    elsif current_user.coverimage.attach(params[:coverimage])
+      flash[:success] = 'Cover Image Changed Successfully'
+      redirect_to user_path(id: current_user.id)
     end
   end
 
