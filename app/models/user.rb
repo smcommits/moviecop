@@ -37,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def not_following
-    User.all.includes([:photo_attachment]).excluding(followings, self).sort_by(&:created_at).reverse!
+    User.all.includes([photo_attachment: :blob]).excluding(followings, self).sort_by(&:created_at).reverse!
   end
 
   def followings_count
