@@ -22,11 +22,9 @@ class UsersController < ApplicationController
   def update
     if params.key?(:photo)
       if current_user.photo.attach(params[:photo])
-        flash[:success] = params
         redirect_to user_path(id: current_user.id)
       end
     elsif current_user.coverimage.attach(params[:coverimage])
-      flash[:success] = 'Cover Image Changed Successfully'
       redirect_to user_path(id: current_user.id)
     end
   end
