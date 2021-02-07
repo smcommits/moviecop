@@ -28,6 +28,7 @@ Note: The application is hosted on the free tier of Heroku and therefore the ima
 ## Screens
 #### Desktop
 ![screenshot](./desktop.png)
+### Mobile
 ![screenshot](./mobile.png)
 ## Available Features
 
