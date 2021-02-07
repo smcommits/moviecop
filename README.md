@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/smcommits/moviecop/archive/develop.zip"><img src="./assets/images/inspector.png" width="200" height="200" ></a>
+  <a href="https://github.com/smcommits/moviecop/archive/develop.zip"><img src="./camera.png" width="200" height="200" ></a>
 </h1>
 
 <h1 align="center">Moviecop</h1>
@@ -21,11 +21,14 @@
 Moviecop is an opinion sharing platform about Movies. The application is written in Ruby by using Ruby on Rails web framework.
 
 ## Live Demo
+[Click here](https://moviecop.herokuapp.com) to visit the live demo of the application. 
 
+Note: The application is hosted on the free tier of Heroku and therefore the images attached will not persist after the next dyno reset. In simple words, the images that a user will upload to the live demo will disappear in 24 hours. 
 
 ## Screens
-
-
+#### Desktop
+![screenshot](./desktop.png)
+![screenshot](./mobile.png)
 ## Available Features
 
 Moviecop comes with a very basic functionality of a social networking platform:
@@ -33,14 +36,13 @@ Moviecop comes with a very basic functionality of a social networking platform:
 - Users can upload photographs and share opinions
 - The users can like the opinions of other users. 
 
-Although functionalities are limited at the moment, the application is desinged in a manner that it is extensible and any new feature can be implemented with ease. 
+Although functionalities are limited at the moment, the application is desinged in a manner that it is scalable and any new feature can be implemented with ease. 
 
 ## Usage
 
 ### Prerequisites
 
 Prior to running the application locally the user will have to make sure of the following:
-- Installing
 - Installing  Ruby
 - Installing Ruby on Rails
 
@@ -88,7 +90,7 @@ rails s
 ```
 
 The output will look similar to the following screenshot 
-
+![screenshot](./server_output.png)
 
 Visit the url localost:xxxx in your output to run the application in your browser
 
