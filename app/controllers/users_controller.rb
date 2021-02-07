@@ -21,9 +21,7 @@ class UsersController < ApplicationController
 
   def update
     if params.key?(:photo)
-      if current_user.photo.attach(params[:photo])
-        redirect_to user_path(id: current_user.id)
-      end
+      redirect_to user_path(id: current_user.id) if current_user.photo.attach(params[:photo])
     elsif current_user.coverimage.attach(params[:coverimage])
       redirect_to user_path(id: current_user.id)
     end
