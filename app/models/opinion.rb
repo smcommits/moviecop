@@ -1,7 +1,7 @@
 class Opinion < ApplicationRecord
   acts_as_votable
 
-  validates :text, presence: { message: "Woops! Empty opinion won't make a differnce" }
+  validates :text, presence: true
 
   has_many :likes, dependent: :destroy
   belongs_to :user
