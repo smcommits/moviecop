@@ -1,0 +1,101 @@
+$font-family-sans-serif: 'Nunito', lato, system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+
+$primary: #54a9ea;
+$dark: #1b2c3c;
+$danger: #e36363;
+$secondary: #afb0b2;
+$secondary-semi: #677d92;
+$border-color: #e6e7e9;
+$nav-tabs-link-active-color: #fff;
+$nav-tabs-link-active-bg: $dark;
+$nav-tabs-link-active-border-color: $dark;
+$box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+
+.text-semi {
+  color: $secondary-semi;
+}
+
+.form-section {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 450px;
+}
+
+.user-dp {
+  width: 96px;
+  height: 96px;
+
+  img {
+    width: 99%;
+    height: 99%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.photo-change {
+  label {
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    top: -50%;
+    cursor: pointer;
+
+    img {
+      width: 99%;
+      height: 99%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.image-upload-cover {
+  padding: 20%;
+  width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+.cover-input {
+  display: none;
+}
+
+.opinions {
+  width: 95%;
+}
+
+#profile {
+  label {
+    position: relative;
+  }
+}
+
+.user-profile-picture {
+  @extend .user-dp;
+
+  position: absolute;
+  top: -25%;
+}
+
+.like {
+  font-size: 1.2em;
+  color: $danger;
+}
+
+.user-name {
+  font-weight: 700;
+}
+
+.alert {
+  width: 50%;
+  float: right;
+}

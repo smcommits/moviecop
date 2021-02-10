@@ -1,0 +1,69 @@
+<%= render 'layouts/sidebar'%>
+
+
+<div class="content h-100">
+
+  <%= render 'layouts/navbar'%>
+
+  <section class="coverimage-container d-lg-none">
+    <%= display_cover_image(@user) %>
+  </section>
+
+  <section class="user-details d-lg-none">
+    <%= render partial: 'user_detail'%>
+  </section>
+
+  <div class="container-fluid row pr-0 h-100">
+    
+    <div class="col-lg-8 col-xl-9">
+      
+      <section class="coverimage-container d-none d-lg-block">
+        <%= display_cover_image(@user) %>
+      </section>
+
+      <div class="profile-items mt-2">
+        <ul class="nav nav-tabs row mx-0 d-lg-none">
+          <li class="nav-item col-6 text-center px-0">
+            <a class="nav-link active font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#opinions">Opinions</a>
+          </li>
+          <li class="nav-item col-6 text-center px-0">
+            <a class="nav-link font-weight-bold" role="tab" data-toggle="tab" aria-current="page" href="#followers">Followers</a>
+          </li>
+        </ul>
+        
+        <div class="tab-content">
+          <div class="tab-pane fade show active" role="tabepanel" id="opinions">
+            <section class="opinions-user shadow mt-4 p-3 mx-auto bg-white mx-lg-0 rounded-lg">
+              <strong class="text-primary text-uppercase">All Opinions</strong>
+              <hr>
+              <%= display_opinions(@user) %>
+            </section>
+          </div>
+          
+          <div class="tab-pane fade" role="tabepanel" id="followers">
+            <section class="opinions mt-4 p-3 mx-auto shadow d-lg-none">
+              <strong class="text-primary text-uppercase">Followed By</strong>
+              <hr>
+              <%= display_followers(@user) %>
+            </section>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-xl-3 pr-0 h-100 pl-lg-2 who-to-follow-container d-none d-lg-block">
+      <section class="user-details-lg">
+        <%= render partial: 'user_detail'%>
+      </section>
+      
+      <section class="mt-4 p-3 mx-auto" id="followed">
+        <strong class="text-primary text-uppercase">Followed By</strong>
+        <hr>
+        <%= display_followers(@user) %>
+      </section>
+    </div>
+
+  </div>
+</div>

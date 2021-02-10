@@ -1,0 +1,7 @@
+<label for="cover-input" style="background-image: url(<%=url%>)" class="image-upload-cover">
+</label>
+
+<%=form_with url: user_path(id: current_user.id), id: 'cover-form', method: :patch do |f|%>
+   <%= f.file_field :coverimage, id:"cover-input", class: "cover-input" %>
+<%end%> 
+

@@ -1,0 +1,32 @@
+.op-photo {
+  width: 96px;
+  height: 96px;
+
+  img {
+    width: 99%;
+    height: 99%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .user-details-lg {
+    text-align: center;
+
+    .photo-change {
+      label {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    .name {
+      line-height: 1;
+    }
+  }
+
+  #unchanged {
+    position: relative;
+  }
+}

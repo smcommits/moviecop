@@ -1,0 +1,29 @@
+<%= render 'layouts/sidebar'%> 
+<div class="content h-100">
+  <%= render 'layouts/navbar'%>
+  <div class="container-fluid row pr-0 h-100">
+  <div class="col-lg-8">
+    <div class="bg-white">
+      <%= render partial: 'opinions/form', locals: {opinion: @opinion}%>
+    </div>
+
+    <div>
+      <section class="follwings-tweets shadow rounded p-3 mt-5 mt-lg-5 bg-white">
+        <strong class="text-uppercase text-primary"><%="#{@followings_opinions&.count} new opinions"%></strong>
+        <hr>
+        <%= render @followings_opinions%>
+      </section>
+    </div>
+  </div>
+
+    <div class="col-lg-4 pr-0 h-100 pl-lg-2 who-to-follow-container">
+      <section class="to-follow p-4 mt-5 mt-lg-0 pl-lg-3 shadow">
+    <strong class="mb-2 font-weight-bold text-secondary text-uppercase">Who To Follow</strong>
+      <hr>
+      <%= render partial: 'layouts/follows', collection: @not_followings, as: :user %>
+      </section>
+    </div>
+    </div>
+</div>
+</div>
+

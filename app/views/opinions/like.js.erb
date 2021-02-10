@@ -1,0 +1,4 @@
+$("#like_<%= @opinion.id %>").attr("data-prefix", "fas");
+$("#like_<%= @opinion.id %>").parent().attr("href", "<%= unlike_opinion_path(@opinion.id) %>")
+
+$("#likes_<%= @opinion.id %>").html("<%= j (render partial:'opinions/likes', locals: { opinion: @opinion} ) %>");
